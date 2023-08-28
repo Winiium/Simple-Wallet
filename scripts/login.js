@@ -24,8 +24,8 @@ function checkUserAccount() {
   userData.forEach((data) => {
     if(loginUsername.value === data.username) {
       if(loginPassword.value === data.password) {
-        verified = true;
         saveBalance(data.id);
+        verified = true;
       }
     }
   });
