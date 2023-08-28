@@ -9,6 +9,7 @@ document.querySelector('.js-welcome-user')
 const htmlBalance = document.querySelector('.js-balance');
 updateBalance();
 
+const logoutButton = document.querySelector('.js-logout-button');
 const incomeButton = document.querySelector('.js-income');
 const expenseButton = document.querySelector('.js-expense');
 const amountDescription = document.querySelector('.js-amount-description');
@@ -16,6 +17,10 @@ const selectedOption = document.querySelector('.js-selected-option');
 const inputAmount = document.querySelector('.js-input-amount');
 const doneButton = document.querySelector('.js-done-button');
 
+logoutButton.addEventListener('click', () => {
+  const linkUrl = 'login.html';
+  window.location.href = linkUrl;
+});
 
 incomeButton.addEventListener('click', () => {
   showInput(true);
