@@ -25,23 +25,22 @@ logoutButton.addEventListener('click', () => {
 incomeButton.addEventListener('click', () => {
   showInput(true);
   selectedOption.innerHTML = 'Income';
-  doneButton.addEventListener('click', () => {
-    balance += Number(inputAmount.value);
-    inputAmount.value = '';
-    showInput(false);
-    updateBalance();
-  })
 });
 
 expenseButton.addEventListener('click', () => {
   showInput(true);
   selectedOption.innerHTML = 'Expense';
-  doneButton.addEventListener('click', () => {
+});
+
+doneButton.addEventListener('click', () => {
+  if(selectedOption.innerHTML === 'Income') {
+    balance += Number(inputAmount.value);
+  } else if(selectedOption.innerHTML === 'Expense') {
     balance -= Number(inputAmount.value);
-    inputAmount.value = '';
-    showInput(false);
-    updateBalance();
-  })
+  }
+  inputAmount.value = '';
+  showInput(false);
+  updateBalance();
 });
 
 function updateBalance() {
