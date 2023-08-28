@@ -1,0 +1,7 @@
+.amount-description {
+  display: none;
+}
+
+.amount-description-show {
+  display: initial;
+}

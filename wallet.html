@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Wallet</title>
+    <link rel="stylesheet" href="/styles/wallet.css">
   </head>
   <body>
     <div>Wallet</div>
     <div class="js-welcome-user"></div>
     <div>Balance</div>
     <div class="js-balance"></div>
-    <button>Income</button>
-    <button>Expense</button>
-    <div>
+    <button class="js-income">Income</button>
+    <button class="js-expense">Expense</button>
+    <div class="amount-description js-amount-description">
+      <div class="js-selected-option"></div>
+      <input class="js-input-amount" type="text">
       <div>Description</div>
       <input type="text">
-      <button>Done</button>
+      <button class="js-done-button">Done</button>
     </div>
     <div>
       <div>Record History</div>
