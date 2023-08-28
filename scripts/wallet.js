@@ -1,4 +1,6 @@
+import {updateBalanceData} from '../data/data.js';
 
+const id = JSON.parse(localStorage.getItem('id'));
 const username = JSON.parse(localStorage.getItem('username'));
 let balance = JSON.parse(localStorage.getItem('balance'));
 
@@ -19,22 +21,27 @@ incomeButton.addEventListener('click', () => {
   showInput(true);
   selectedOption.innerHTML = 'Income';
   doneButton.addEventListener('click', () => {
-    balance =+ Number(inputAmount.value);
+    balance += Number(inputAmount.value);
+    inputAmount.value = '';
     showInput(false);
+    updateBalance();
   })
 });
 
-incomeButton.addEventListener('click', () => {
+expenseButton.addEventListener('click', () => {
   showInput(true);
   selectedOption.innerHTML = 'Expense';
   doneButton.addEventListener('click', () => {
-    balance =- Number(inputAmount.value);
+    balance -= Number(inputAmount.value);
+    inputAmount.value = '';
     showInput(false);
+    updateBalance();
   })
 });
 
 function updateBalance() {
   htmlBalance.innerHTML = `Php ${balance}`;
+  updateBalanceData(id, balance);
 }
 
 function showInput(condition) {
