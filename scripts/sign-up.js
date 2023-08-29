@@ -15,3 +15,11 @@ signUpButton.addEventListener('click', () => {
     inputConfirmPassword.value
   );
 });
+
+backButton.addEventListener('click', () => {
+  const linkUrl = 'index.html';
+  window.location.href = linkUrl;
+  inputUsername.value = '';
+  inputPassword.value = '';
+  inputConfirmPassword.value = '';
+});
