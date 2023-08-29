@@ -27,7 +27,7 @@ export function signUpUserData(id, username, password, confirmPassword) {
     });
     saveUserData();
     alert('Sign up successful');
-    const linkUrl = 'login.html';
+    const linkUrl = 'index.html';
     window.location.href = linkUrl;
   } else {
     if(matchedPassword) {

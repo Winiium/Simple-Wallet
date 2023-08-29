@@ -25,7 +25,7 @@ updateRecordHistoryHTML();
 //BUTTONS
 
 logoutButton.addEventListener('click', () => {
-  const linkUrl = 'login.html';
+  const linkUrl = 'index.html';
   window.location.href = linkUrl;
   localStorage.removeItem('id');
   localStorage.removeItem('username');
