@@ -1,45 +1,38 @@
-export let history = [{
+let history = JSON.parse(localStorage.getItem('history')) || [{
   id: 123,
   records: [{
-    date: 1,
-    time: 2,
-    type: 2,
-    description: 3
+    date: 'August 29, 2023',
+    time: '2:48 PM',
+    type: 'Income',
+    amount: 100000000,
+    description: 'CEO'
   }]
-}, {
-    id: 456,
-    records: [{
-      date: 1,
-      time: 2,
-      type: 2,
-      description: 3
-    }]
 }];
 
-export function addHistory(id, date, time, type, description) {
-  let matchedId;
+function saveHistory() {
+  localStorage.setItem('history', JSON.stringify(history));
+}
+
+export function addHistory(id, date, time, type, amount, description) {
+  let matchedId = false;
+  const records = {
+    date,
+    time,
+    type,
+    amount,
+    description
+  };
   history.forEach((data) => {
     if(id === data.id) {
-      matchedId = data;
+      data.records.push(records);
+      matchedId = true;
     }
   });
-
-  if(matchedId) {
-    matchedId.records.push({
-      date,
-      time,
-      type,
-      description
-    });
-  } else {
+  if(!matchedId) {
     history.push({
       id,
-      records: [{
-        date,
-        time,
-        type,
-        description
-      }]
+      records: [records]
     });
   }
+  saveHistory();
 }

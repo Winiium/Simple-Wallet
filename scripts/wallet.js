@@ -1,12 +1,10 @@
 import {updateBalanceData} from '../data/data.js';
 import {addHistory} from '../data/history.js';
-import {currentDate, getCurrentMonth, getCurrentTime} from './utils/date.js';
+import {getCurrentDate, getCurrentTime} from './utils/date.js';
 
 const id = JSON.parse(localStorage.getItem('id'));
 const username = JSON.parse(localStorage.getItem('username'));
 let balance = JSON.parse(localStorage.getItem('balance'));
-
-
 
 document.querySelector('.js-welcome-user')
   .innerHTML = `Welcome, ${username}`;
@@ -21,6 +19,8 @@ const selectedOption = document.querySelector('.js-selected-option');
 const inputAmount = document.querySelector('.js-input-amount');
 const inputDescription = document.querySelector('.js-input-description');
 const doneButton = document.querySelector('.js-done-button');
+
+//BUTTONS
 
 logoutButton.addEventListener('click', () => {
   const linkUrl = 'login.html';
@@ -46,17 +46,21 @@ doneButton.addEventListener('click', () => {
   } else if(selectedOption.innerHTML === 'Expense') {
     balance -= Number(inputAmount.value);
   }
-  inputAmount.value = '';
-  showInput(false);
   updateBalance();
   addHistory(
     id, 
-    `${getCurrentMonth} ${currentDate.getDay()}, ${currentDate.getFullYear()}`,
+    getCurrentDate(),
     getCurrentTime(),
     selectedOption.innerHTML,
+    inputAmount.value,
     inputDescription.value
-    );
+  );
+  inputAmount.value = '';
+  inputDescription.value = '';
+  showInput(false);
 });
+
+//FUNCTIONS
 
 function updateBalance() {
   htmlBalance.innerHTML = `Php ${balance}`;
