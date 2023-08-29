@@ -1,5 +1,5 @@
 import {updateBalanceData} from '../data/data.js';
-import {addHistory} from '../data/history.js';
+import {history, addHistory} from '../data/history.js';
 import {getCurrentDate, getCurrentTime} from './utils/date.js';
 import {numToString, stringToNum} from './utils/formatNumber.js';
 
@@ -20,7 +20,8 @@ const selectedOption = document.querySelector('.js-selected-option');
 const inputAmount = document.querySelector('.js-input-amount');
 const inputDescription = document.querySelector('.js-input-description');
 const doneButton = document.querySelector('.js-done-button');
-
+const recordHistoryHTML = document.querySelector('.js-record-history');
+updateRecordHistoryHTML();
 //BUTTONS
 
 logoutButton.addEventListener('click', () => {
@@ -56,6 +57,7 @@ doneButton.addEventListener('click', () => {
     inputAmount.value,
     inputDescription.value
   );
+  updateRecordHistoryHTML()
   inputAmount.value = '';
   inputDescription.value = '';
   showInput(false);
@@ -64,7 +66,7 @@ doneButton.addEventListener('click', () => {
 //FUNCTIONS
 
 function updateBalance() {
-  htmlBalance.innerHTML = `Php ${balance}`;
+  htmlBalance.innerHTML = `&#8369; ${balance}`;
   updateBalanceData(id, balance);
 }
 
@@ -75,4 +77,18 @@ function showInput(condition) {
     amountDescription.classList.remove('amount-description-show');
   }
   
+}
+
+function updateRecordHistoryHTML() {
+  let historyHTML = ``;
+  history.forEach((data) => {
+    if(id === data.id) {
+      for(let i = data.records.length - 1; i >= 0; i--) {
+        historyHTML += `
+          <div>(${data.records[i].date} ${data.records[i].time}) ${data.records[i].type} &#8369;${data.records[i].amount} - ${data.records[i].description}</div>
+        `;
+      }
+    }
+  });
+  recordHistoryHTML.innerHTML = historyHTML;
 }
