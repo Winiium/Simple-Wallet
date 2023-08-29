@@ -1,8 +1,12 @@
 import {updateBalanceData} from '../data/data.js';
+import {addHistory} from '../data/history.js';
+import {currentDate, getCurrentMonth, getCurrentTime} from './utils/date.js';
 
 const id = JSON.parse(localStorage.getItem('id'));
 const username = JSON.parse(localStorage.getItem('username'));
 let balance = JSON.parse(localStorage.getItem('balance'));
+
+
 
 document.querySelector('.js-welcome-user')
   .innerHTML = `Welcome, ${username}`;
@@ -15,6 +19,7 @@ const expenseButton = document.querySelector('.js-expense');
 const amountDescription = document.querySelector('.js-amount-description');
 const selectedOption = document.querySelector('.js-selected-option');
 const inputAmount = document.querySelector('.js-input-amount');
+const inputDescription = document.querySelector('.js-input-description');
 const doneButton = document.querySelector('.js-done-button');
 
 logoutButton.addEventListener('click', () => {
@@ -41,6 +46,13 @@ doneButton.addEventListener('click', () => {
   inputAmount.value = '';
   showInput(false);
   updateBalance();
+  addHistory(
+    id, 
+    `${getCurrentMonth} ${currentDate.getDay()}, ${currentDate.getFullYear()}`,
+    getCurrentTime(),
+    selectedOption.innerHTML,
+    inputDescription.value
+    );
 });
 
 function updateBalance() {
