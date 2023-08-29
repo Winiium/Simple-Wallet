@@ -25,7 +25,7 @@ updateRecordHistoryHTML();
 //BUTTONS
 
 logoutButton.addEventListener('click', () => {
-  const linkUrl = 'index.html';
+  const linkUrl = 'https://github.com/Winiium/Simple-Wallet/index.html';
   window.location.href = linkUrl;
   localStorage.removeItem('id');
   localStorage.removeItem('username');
