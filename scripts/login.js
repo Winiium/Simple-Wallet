@@ -7,7 +7,7 @@ const loginPassword = document.querySelector('.js-login-password');
 const loginButton = document.querySelector('.js-login-button');
 
 loginButton.addEventListener('click', () => {
-  checkUserAccount();
+  checkUserLoginAccount();
   verifyAccount();
 });
 
@@ -20,7 +20,7 @@ function verifyAccount() {
   }
 }
 
-function checkUserAccount() {
+function checkUserLoginAccount() {
   userData.forEach((data) => {
     if(loginUsername.value === data.username) {
       if(loginPassword.value === data.password) {

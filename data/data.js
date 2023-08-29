@@ -9,6 +9,39 @@ function saveUserData() {
   localStorage.setItem('userData', JSON.stringify(userData));
 }
 
+export function signUpUserData(id, username, password, confirmPassword) {
+  let matchedUsername = false;
+  let matchedPassword = password === confirmPassword;
+  userData.forEach((data) => {
+    if(username === data.username) {
+      matchedUsername = true;
+    }
+  });
+
+  if(!matchedUsername && matchedPassword) { //false && false
+    userData.push({
+      id,
+      username,
+      password,
+      balance: '0'
+    });
+    saveUserData();
+    alert('Sign up successful');
+    const linkUrl = 'login.html';
+    window.location.href = linkUrl;
+  } else {
+    if(matchedPassword) {
+      alert('Username is already taken');
+    } else { 
+      if(!matchedUsername) {
+        alert('Password is not matched');
+      } else {
+        alert('Username is already taken and password is not matched');
+      }
+    }
+  }
+}
+
 export function saveBalance(id) {
   userData.forEach((data) => {
     if(id === data.id) {
