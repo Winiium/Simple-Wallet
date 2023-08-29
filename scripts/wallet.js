@@ -1,6 +1,7 @@
 import {updateBalanceData} from '../data/data.js';
 import {addHistory} from '../data/history.js';
 import {getCurrentDate, getCurrentTime} from './utils/date.js';
+import {numToString, stringToNum} from './utils/formatNumber.js';
 
 const id = JSON.parse(localStorage.getItem('id'));
 const username = JSON.parse(localStorage.getItem('username'));
@@ -42,9 +43,9 @@ expenseButton.addEventListener('click', () => {
 
 doneButton.addEventListener('click', () => {
   if(selectedOption.innerHTML === 'Income') {
-    balance += Number(inputAmount.value);
+    balance = numToString(stringToNum(balance) + Number(inputAmount.value));
   } else if(selectedOption.innerHTML === 'Expense') {
-    balance -= Number(inputAmount.value);
+    balance = numToString(stringToNum(balance) - Number(inputAmount.value));
   }
   updateBalance();
   addHistory(

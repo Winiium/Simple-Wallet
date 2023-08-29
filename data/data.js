@@ -2,7 +2,7 @@ export let userData = JSON.parse(localStorage.getItem('userData')) || [{
   id: 123,
   username: 'Winium',
   password: '123',
-  balance: 100000000
+  balance: '100,000,000'
 }];
 
 function saveUserData() {

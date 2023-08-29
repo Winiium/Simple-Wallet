@@ -4,7 +4,7 @@ let history = JSON.parse(localStorage.getItem('history')) || [{
     date: 'August 29, 2023',
     time: '2:48 PM',
     type: 'Income',
-    amount: 100000000,
+    amount: '100,000,000',
     description: 'CEO'
   }]
 }];
@@ -35,4 +35,5 @@ export function addHistory(id, date, time, type, amount, description) {
     });
   }
   saveHistory();
+  console.log(history);
 }
