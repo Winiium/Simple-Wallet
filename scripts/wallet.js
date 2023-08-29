@@ -25,6 +25,9 @@ const doneButton = document.querySelector('.js-done-button');
 logoutButton.addEventListener('click', () => {
   const linkUrl = 'login.html';
   window.location.href = linkUrl;
+  localStorage.removeItem('id');
+  localStorage.removeItem('username');
+  localStorage.removeItem('balance');
 });
 
 incomeButton.addEventListener('click', () => {
