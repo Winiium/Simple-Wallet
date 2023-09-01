@@ -4,30 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Wallet</title>
-    <link rel="stylesheet" href="https://Winiium.github.io/Simple-Wallet/styles/wallet.css">
+    <link rel="stylesheet" href="/styles/wallet.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;500;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div>Wallet</div>
-    <button class="js-logout-button">Logout</button>
-    <div class="js-welcome-user"></div>
-    <div>Balance</div>
-    <div class="js-balance"></div>
-    <button class="js-income">Income</button>
-    <button class="js-expense">Expense</button>
-    <div class="amount-description js-amount-description">
-      <div class="js-selected-option"></div>
-      <input class="js-input-amount" type="text">
-      <div>Description</div>
-      <input class="js-input-description" type="text">
-      <button class="js-done-button">Done</button>
-    </div>
-    <div>
+    <main class="wallet-container">
+      <!-- WELCOME -->
+      <div class="welcome-container">
+        <div class="js-welcome-user welcome-text"></div>
+        <button class="js-logout-button logout-button">logout</button>
+      </div>
+
+      <div class="second-layer">
+        <!-- BALANCE -->
+        <div class="balance-text">Balance:</div>
+        <div class="js-balance balance-amount-text"></div>
+        <!-- BUTTONS -->
+        <div class="buttons">
+          <button class="js-income income-button">+ Income</button>
+        <button class="js-expense expense-button">- Expense</button>
+        </div>
+        <!-- DESCRIPTION -->
+        <div class="amount-description js-amount-description">
+          <div class="amount-container">
+            <div class="js-selected-option selected-option">Add Income:</div>
+            <input class="js-input-amount input-amount" type="text" placeholder="Amount">
+          </div>
+          <textarea class="js-input-description input-description" rows="" placeholder="Description"></textarea>
+          <div class="center-done-button">
+            <button class="js-done-button done-button">Done</button>
+          </div>
+          
+        </div>
+      </div>
+    </main>
+    
+    <div class="record-history-container">
       <div>Record History</div>
       <div class="js-record-history">
         
       </div>
     </div>
     
-    <script type="module" src="https://Winiium.github.io/Simple-Wallet/scripts/wallet.js"></script>
+    <script type="module" src="/scripts/wallet.js"></script>
   </body>
 </html>

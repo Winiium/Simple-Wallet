@@ -17,6 +17,7 @@ const incomeButton = document.querySelector('.js-income');
 const expenseButton = document.querySelector('.js-expense');
 const amountDescription = document.querySelector('.js-amount-description');
 const selectedOption = document.querySelector('.js-selected-option');
+let incomeExpense = '';
 const inputAmount = document.querySelector('.js-input-amount');
 const inputDescription = document.querySelector('.js-input-description');
 const doneButton = document.querySelector('.js-done-button');
@@ -33,13 +34,11 @@ logoutButton.addEventListener('click', () => {
 });
 
 incomeButton.addEventListener('click', () => {
-  showInput(true);
-  selectedOption.innerHTML = 'Income';
+  showInput(true, 'Income');
 });
 
 expenseButton.addEventListener('click', () => {
-  showInput(true);
-  selectedOption.innerHTML = 'Expense';
+  showInput(true, 'Expense');
 });
 
 doneButton.addEventListener('click', () => {
@@ -54,7 +53,7 @@ doneButton.addEventListener('click', () => {
     getCurrentDate(),
     getCurrentTime(),
     selectedOption.innerHTML,
-    inputAmount.value,
+    incomeExpense,
     inputDescription.value
   );
   updateRecordHistoryHTML()
@@ -70,11 +69,15 @@ function updateBalance() {
   updateBalanceData(id, balance);
 }
 
-function showInput(condition) {
+function showInput(condition, option) {
   if(condition) {
     amountDescription.classList.add('amount-description-show');
+    selectedOption.innerHTML = `Add ${option}:`;
+    incomeExpense = option;
   } else {
     amountDescription.classList.remove('amount-description-show');
+    selectedOption.innerHTML = `Add ${option}:`;
+    incomeExpense = option;
   }
   
 }

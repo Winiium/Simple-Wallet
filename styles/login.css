@@ -54,10 +54,6 @@ body {
   font-size: 15px;
 }
 
-.login-input-container .input::placeholder {
-  text-align: center;
-}
-
 /* LOGIN BUTTON */
 .login-button {
   font-weight: 900;
