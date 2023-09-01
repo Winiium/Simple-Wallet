@@ -48,6 +48,8 @@ body {
   background-color: #545454;
   padding: 15px 15px 15px 30px;
   margin-right: 45px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .welcome-container .logout-button {
@@ -158,4 +160,68 @@ body {
   color:#4F546D;
   padding: 2px 50px;
   margin-bottom: 25px;
+}
+
+/* RECORD HISTORY */
+
+.record-history-container{
+  height: 350px;
+  width: 500px;
+  overflow-y: auto;
+}
+
+.record-history-container .title-container {
+  position: fixed;
+  background-color: rgb(30, 81, 127);
+  width: 483px;
+  border-top-left-radius: 20px;
+}
+
+.record-history-container .title {
+  font-weight: 900;
+  font-size: 20px;
+  color: white;
+  background-color: #545454;
+  padding: 15px 0px 15px 30px;
+  width: 200px;
+  margin-top: 20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  
+}
+
+.record-history-container .record-history {
+  margin: 90px 20px 0px 20px;
+  font-weight: 500;
+  font-size: 18px;
+
+}
+
+.record-history-container .record-history .records {
+  border-top: solid 1px #A6A6A6;
+}
+
+.records .date {
+  color: #A0FFFC;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.records .content {
+  padding-left: 30px;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.records .content .Income, .records .content .Expense {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.records .content .Income {
+  color: #C1FF72;
+}
+
+.records .content .Expense {
+  color: #FF5757;
 }

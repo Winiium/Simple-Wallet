@@ -13,7 +13,7 @@ loginButton.addEventListener('click', () => {
 
 function verifyAccount() {
   if(verified) {
-    const linkUrl = '/wallet.html';
+    const linkUrl = 'https://Winiium.github.io/Simple-Wallet/wallet.html';
     window.location.href = linkUrl;
   } else {
     alert('Account cannot be found!');
