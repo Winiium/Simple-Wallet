@@ -1,0 +1,79 @@
+body {
+  background-image: url('/assets/Background-picture/blue-spiral-bg.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+  margin: 0px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Archivo', sans-serif;
+}
+
+/* LOGIN CONTAINER */
+.login-container {
+  background-color: rgb(30, 81, 127);
+  padding: 60px 60px;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-title {
+  font-weight: 900;
+  color: white;
+  font-size: 30px;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* LOGIN INPUT */
+.login-input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.login-input-container .icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.login-input-container .input {
+  padding: 5px;
+  height: 25px;
+  flex: 1;
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.login-input-container .input::placeholder {
+  text-align: center;
+}
+
+/* LOGIN BUTTON */
+.login-button {
+  font-weight: 900;
+  font-size: 16px;
+  color: #4F546D;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 3px 40px;
+
+}
+
+/* LOGIN TO SIGN UP LINK */
+.login-to-signup-link {
+  margin-top: 30px;
+  color: white;
+  font-weight: 200;
+  font-size: 14px;
+}
