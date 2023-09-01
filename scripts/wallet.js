@@ -26,7 +26,7 @@ updateRecordHistoryHTML();
 //BUTTONS
 
 logoutButton.addEventListener('click', () => {
-  const linkUrl = 'https://Winiium.github.io/Simple-Wallet/index.html';
+  const linkUrl = '/index.html';
   window.location.href = linkUrl;
   localStorage.removeItem('id');
   localStorage.removeItem('username');
@@ -42,9 +42,9 @@ expenseButton.addEventListener('click', () => {
 });
 
 doneButton.addEventListener('click', () => {
-  if(selectedOption.innerHTML === 'Income') {
+  if(incomeExpense === 'Income') {
     balance = numToString(stringToNum(balance) + Number(inputAmount.value));
-  } else if(selectedOption.innerHTML === 'Expense') {
+  } else if(incomeExpense === 'Expense') {
     balance = numToString(stringToNum(balance) - Number(inputAmount.value));
   }
   updateBalance();
@@ -52,8 +52,8 @@ doneButton.addEventListener('click', () => {
     id, 
     getCurrentDate(),
     getCurrentTime(),
-    selectedOption.innerHTML,
     incomeExpense,
+    inputAmount.value,
     inputDescription.value
   );
   updateRecordHistoryHTML()
@@ -88,7 +88,10 @@ function updateRecordHistoryHTML() {
     if(id === data.id) {
       for(let i = data.records.length - 1; i >= 0; i--) {
         historyHTML += `
-          <div>(${data.records[i].date} ${data.records[i].time}) ${data.records[i].type} &#8369;${data.records[i].amount} - ${data.records[i].description}</div>
+          <div class="records">
+            <div class="date">${data.records[i].date} ${data.records[i].time}</div>
+            <div class="content"><span class="${data.records[i].type}">${data.records[i].type}</span> &#8369;${data.records[i].amount} - ${data.records[i].description}</div>
+          </div>
         `;
       }
     }

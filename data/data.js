@@ -27,7 +27,7 @@ export function signUpUserData(id, username, password, confirmPassword) {
     });
     saveUserData();
     alert('Sign up successful'); //https://Winiium.github.io/Simple-Wallet/
-    const linkUrl = 'https://Winiium.github.io/Simple-Wallet/index.html';
+    const linkUrl = '/index.html';
     window.location.href = linkUrl;
   } else {
     if(matchedPassword) {

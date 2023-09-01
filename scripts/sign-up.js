@@ -17,7 +17,7 @@ signUpButton.addEventListener('click', () => {
 });
 
 backButton.addEventListener('click', () => {
-  const linkUrl = 'https://Winiium.github.io/Simple-Wallet/index.html';
+  const linkUrl = '/index.html';
   window.location.href = linkUrl;
   inputUsername.value = '';
   inputPassword.value = '';
