@@ -4,17 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
+
+    <link rel="stylesheet" href="/styles/sign-up.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;500;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div>Sign up</div>
-    <div>Username</div>
-    <input class="js-input-username" type="text">
-    <div>Password</div>
-    <input class="js-input-password" type="text">
-    <div>Confirm Password</div>
-    <input class="js-input-confirm-password" type="text">
-    <button class="js-sign-up-button">Sign up</button>
-    <button class="js-back-button">Back</button>
+    <main class="sign-up-container">
+      <div class="sign-up-title">Sign up</div>
+
+      <div class="sign-up-input-container">
+        <img class="icon" src="/assets/icons/user.png" alt="user icon">
+        <input class="js-input-username input" type="text" placeholder="Username">
+      </div>
+      <div class="sign-up-input-container">
+        <img class="icon" src="/assets/icons/lock.png" alt="user icon">
+        <input class="js-input-password input" type="text" placeholder="Password">
+      </div>
+      <div class="sign-up-input-container">
+        <img class="icon" src="/assets/icons/lock.png" alt="user icon">
+        <input class="js-input-confirm-password input" type="text" placeholder="Confirm Password">
+      </div>
+
+      <div>
+        <button class="js-back-button back-button">BACK</button>
+        <button class="js-sign-up-button sign-up-button">SIGN UP</button>
+      </div>
+      
+    </main>
+    
 
     <script type="module" src="https://Winiium.github.io/Simple-Wallet/scripts/sign-up.js"></script>
   </body>

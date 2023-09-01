@@ -10,10 +10,10 @@ body {
   font-family: 'Archivo', sans-serif;
 }
 
-/* LOGIN CONTAINER */
-.login-container {
+/* SIGN UP CONTAINER */
+.sign-up-container {
   background-color: rgb(30, 81, 127);
-  padding: 60px 60px;
+  padding: 67px 60px;
   border-radius: 20px;
 
   display: flex;
@@ -22,7 +22,7 @@ body {
   align-items: center;
 }
 
-.login-title {
+.sign-up-title {
   font-weight: 900;
   color: white;
   font-size: 30px;
@@ -30,20 +30,20 @@ body {
   letter-spacing: 1px;
 }
 
-/* LOGIN INPUT */
-.login-input-container {
+/* SIGN UP INPUT */
+.sign-up-input-container {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.login-input-container .icon {
+.sign-up-input-container .icon {
   width: 50px;
   height: 50px;
   margin-right: 10px;
 }
 
-.login-input-container .input {
+.sign-up-input-container .input {
   padding: 5px;
   height: 25px;
   flex: 1;
@@ -54,27 +54,26 @@ body {
   font-size: 15px;
 }
 
-.login-input-container .input::placeholder {
+.sign-up-input-container .input::placeholder {
   text-align: center;
 }
 
-/* LOGIN BUTTON */
-.login-button {
+/* SIGN UP AND BACK BUTTON */
+.sign-up-button, .back-button {
+  margin-top: 10px;
   font-weight: 900;
   font-size: 16px;
   color: #4F546D;
   background-color: white;
   border: none;
   border-radius: 20px;
-  padding: 3px 40px;
+  padding: 5px 0px;
+  width: 130px;
   cursor: pointer;
 }
 
-/* LOGIN TO SIGN UP LINK */
-.login-to-signup-link {
-  margin-top: 30px;
+.back-button {
+  background-color: #4F546D;
   color: white;
-  font-weight: 200;
-  font-size: 14px;
-  cursor: pointer;
+  margin-right: 6px;
 }
